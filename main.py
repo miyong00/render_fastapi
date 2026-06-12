@@ -48,6 +48,6 @@ def index():
     """
     return HTMLResponse(content=html_content, status_code=200)
 
-@add.post("/present")
+@app.post("/present")
 async def give_present(present):
     return {"response:":f"サーバです。メリークリスマス！{present}をありがとう。お返しはキャンディーです。"}
