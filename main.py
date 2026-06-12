@@ -4,6 +4,8 @@ from fastapi import FastAPI
 
 import random
 
+from fastapi.responses import HTMLResponse
+
 app = FastAPI()
 
 
@@ -17,7 +19,7 @@ def read_item(item_id: int, q: Optional[str] = None):
 
 @app.get("/omikuji")
 def omikuji():
-    omikuji_list = [
+    omikuji_list = [.
         "大吉",
         "中吉",
         "小吉",
@@ -31,3 +33,17 @@ def omikuji():
     ]
 
     return {"result" : omikuji_list[random.randrange(10)]}
+
+@app.get("/index")
+def index():
+    html_content = """
+        <html>
+            <head>
+                <title>Some HTML in here</title>
+            </head>
+            <body>
+                <h1>Look at me! HTML!</h1>
+            </body>
+        </html>
+        """
+    return HTMLResponse(content=html_content, status_code=200)
