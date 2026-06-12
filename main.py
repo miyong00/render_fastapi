@@ -42,7 +42,9 @@ def index():
             <title>Some HTML in here</title>
         </head>
         <body>
-            <h1>Look ma! HTML!</h1>
+            <h1>ネトプロ2026</h1>
+            <h2>Python編</h2>
+            <p>python初心者過ぎて何やってるのかわからん。。。とりあえずできてればいいのかな？</P>
         </body>
     </html>
     """
@@ -50,4 +52,4 @@ def index():
 
 @app.post("/present")
 async def give_present(present):
-    return {"response:":f"サーバです。メリークリスマス！{present}をありがとう。お返しはキャンディーです。"}
+    return {"response:":f"サーバです。メリークリスマス！{present}をありがとう。お返しとして{present}を100倍で返すよ！"}
